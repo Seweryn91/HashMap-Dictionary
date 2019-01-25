@@ -42,12 +42,20 @@ public class HashMap {
             this.capacity = capacity;
             this.elements = new LinkedList[this.capacity];
         }
+        
 
         public V get(K key) {        }
 
         public void remove(K key) { }
 
-        public void clearAll() { }
+        public void clearAll() {
+            for (int i = 0; i < this.capacity; i++) {
+                if (elements[i] != null) {
+                    this.size -= elements[i].size();
+                    elements[i].clear();
+                }
+            }
+        }
 
         public int size() { return this.size; }
 
