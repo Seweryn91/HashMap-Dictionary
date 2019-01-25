@@ -2,9 +2,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-public class HashMap {
-
-    class KeyValue<K, V> {
+class KeyValue<K, V> {
         public K key;
         public V value;
 
@@ -32,7 +30,7 @@ public class HashMap {
     }
 
     @SuppressWarnings("unchecked")
-    public class HashTable<K, V> {
+    class HashTable<K, V> {
         private int size = 0;
         private int capacity;
         private List<KeyValue>[] elements;
@@ -117,5 +115,4 @@ public class HashMap {
         private int getKeyIndex(K key) {
             return key.hashCode() % capacity;
         }
-    }
 }
