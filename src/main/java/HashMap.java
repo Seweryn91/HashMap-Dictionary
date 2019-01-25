@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -79,7 +80,15 @@ public class HashMap {
 
         public int size() { return this.size; }
 
-        public void ensureSpace() { }
+        public void ensureSpace(int requiredSize) {
+            if (requiredSize < 0) {
+                throw new IllegalArgumentException("Array cannot be resized to negative value");
+            }
+            if (requiredSize > this.capacity) {
+                int newCapacity = (this.capacity*2);
+                this.elements = Arrays.copyOf(elements, newCapacity);
+            }
+        }
 
         private int getKeyIndex(K key) {
             return key.hashCode() % capacity;
