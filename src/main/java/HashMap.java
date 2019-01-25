@@ -55,7 +55,18 @@ public class HashMap {
             }
         }
 
-        public void remove(K key) { }
+        @SuppressWarnings("SuspiciousMethodCalls")
+        public void remove(K key) {
+            int keyIndex = getKeyIndex(key);
+            List<KeyValue> entries = elements[keyIndex];
+
+            for (KeyValue kv : entries) {
+                if (kv.getKey().equals(key)) {
+                    entries.remove(key);
+                    this.size--;
+                }
+            }
+        }
 
         public void clearAll() {
             for (int i = 0; i < this.capacity; i++) {
