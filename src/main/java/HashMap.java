@@ -42,5 +42,19 @@ public class HashMap {
             this.capacity = capacity;
             this.elements = new LinkedList[this.capacity];
         }
+
+        public V get(K key) {        }
+
+        public void remove(K key) { }
+
+        public void clearAll() { }
+
+        public int size() { return this.size; }
+
+        public void ensureSpace() { }
+
+        private int getKeyIndex(K key) {
+            return key.hashCode() % capacity;
+        }
     }
 }
