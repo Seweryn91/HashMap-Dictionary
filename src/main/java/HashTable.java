@@ -72,7 +72,7 @@ class KeyValue<K, V> {
 
             for (KeyValue kv : entries) {
                 if (kv.getKey().equals(key)) {
-                    return (V) kv.getValue();
+                        return (V) kv.getValue();
                 }
             }
             return null;
