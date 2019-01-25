@@ -75,6 +75,7 @@ public class HashMap {
                     return (V) kv.getValue();
                 }
             }
+            return null;
         }
 
         @SuppressWarnings("SuspiciousMethodCalls")
