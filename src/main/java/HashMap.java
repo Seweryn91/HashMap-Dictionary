@@ -30,6 +30,7 @@ public class HashMap {
         }
     }
 
+    @SuppressWarnings("unchecked")
     public class HashTable<K, V> {
         private int size = 0;
         private int capacity;
