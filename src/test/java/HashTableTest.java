@@ -13,4 +13,15 @@ class HashTableTest {
         assertEquals(1, table.size());
     }
 
+    @Test
+    @DisplayName("Test remove")
+    void testRemove() {
+        HashTable<String, Integer> table = new HashTable<>();
+        table.add("Five", 5);
+        table.add("Six", 6);
+        assertEquals(2, table.size());
+        table.remove("Five");
+        assertEquals(1, table.size());
+    }
+
 }
