@@ -3,12 +3,14 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class HashMapTest {
+class HashTableTest {
 
     @Test
     @DisplayName("Test add")
     void testAdd() {
-        HashMap<String, Integer> map = new HashMap();
+        HashTable<String, Integer> table = new HashTable<>();
+        table.add("Five", 5);
+        assertEquals(1, table.size());
     }
 
 }
