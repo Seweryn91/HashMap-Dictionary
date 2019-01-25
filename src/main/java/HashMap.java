@@ -44,6 +44,27 @@ public class HashMap {
             this.elements = new LinkedList[this.capacity];
         }
 
+        public void add(K key, V value) {
+            ensureSpace(this.size+1);
+            int keyIndex = getKeyIndex(key);
+
+            if (elements[keyIndex] == null) {
+                elements[keyIndex] = new LinkedList<KeyValue>();
+            }
+
+            List<KeyValue> linkedList = elements[keyIndex];
+
+            for (KeyValue kv: linkedList) {
+                if (kv.getKey().equals(key)) {
+                    kv.setValue(value);
+                    return;
+                }
+            }
+
+            linkedList.add(new KeyValue(key, value));
+            this.size++;
+        }
+
 
         public V get(K key) {
             int keyIndex = getKeyIndex(key);
