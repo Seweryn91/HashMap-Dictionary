@@ -58,21 +58,23 @@ class HashTableTest {
     @Test
     @DisplayName("Test add with repeated keys")
     void testAdd_repeatedKeys() {
-        HashTable<String, Integer> table = new HashTable<>();
-        table.add("One", 1);
-        table.add("One", 2);
-        table.add("One", 3);
+        HashTable<String, Integer> table = createOverridingTable();
         assertEquals(1, table.size());
     }
 
     @Test
     @DisplayName("Test overwriting keys")
     void testAdd_overwriteKeys() {
+        HashTable<String, Integer> table = createOverridingTable();
+        assertEquals((Integer) 3, table.get("One"));
+    }
+
+    private HashTable<String, Integer> createOverridingTable() {
         HashTable<String, Integer> table = new HashTable<>();
         table.add("One", 1);
         table.add("One", 2);
         table.add("One", 3);
-        assertEquals((Integer) 3, table.get("One"));
+        return table;
     }
 
 }
