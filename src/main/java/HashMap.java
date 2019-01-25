@@ -37,7 +37,9 @@ public class HashMap {
         private int capacity;
         private List<KeyValue>[] elements;
 
-        public HashTable() { }
+        public HashTable() {
+            this(10);
+        }
 
         public HashTable(int capacity) {
             this.capacity = capacity;
