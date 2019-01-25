@@ -26,7 +26,7 @@ class HashTableTest {
     }
 
     @Test
-    @DisplayName("Test get")
+    @DisplayName("Test get with String-Integer pair")
     void testGet() {
         HashTable<String, Integer> table = new HashTable<>();
         table.add("Five", 5);
@@ -44,6 +44,15 @@ class HashTableTest {
         table.add("Three", 3);
         table.clearAll();
         assertEquals(0, table.size());
+    }
+
+    @Test
+    @DisplayName("Test get with String-String pair")
+    void testGet_TypeString() {
+        HashTable<String, String> table = new HashTable<>();
+        table.add("Ala", "ma Asa");
+        table.add("Sierotka", "ma Rysia");
+        assertEquals("ma Rysia", table.get("Sierotka"));
     }
 
 }
