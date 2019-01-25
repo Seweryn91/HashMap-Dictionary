@@ -24,4 +24,14 @@ class HashTableTest {
         assertEquals(1, table.size());
     }
 
+    @Test
+    @DisplayName("Test get")
+    void testGet() {
+        HashTable<String, Integer> table = new HashTable<>();
+        table.add("Five", 5);
+        table.add("Six", 6);
+        table.add("Seven", 7);
+        assertEquals((Integer) 6, table.get("Six"));
+    }
+
 }
