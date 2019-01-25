@@ -55,4 +55,14 @@ class HashTableTest {
         assertEquals("ma Rysia", table.get("Sierotka"));
     }
 
+    @Test
+    @DisplayName("Test add with repeated keys")
+    void testAdd_repeatedKeys() {
+        HashTable<String, Integer> table = new HashTable<>();
+        table.add("One", 1);
+        table.add("One", 2);
+        table.add("One", 3);
+        assertEquals(1, table.size());
+    }
+
 }
