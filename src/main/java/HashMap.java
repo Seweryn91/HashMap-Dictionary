@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 import java.util.List;
 
 public class HashMap {
@@ -33,5 +34,12 @@ public class HashMap {
         private int size = 0;
         private int capacity;
         private List<KeyValue>[] elements;
+
+        public HashTable() { }
+
+        public HashTable(int capacity) {
+            this.capacity = capacity;
+            this.elements = new LinkedList[this.capacity];
+        }
     }
 }
